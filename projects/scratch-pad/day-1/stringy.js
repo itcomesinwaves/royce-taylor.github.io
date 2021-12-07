@@ -59,7 +59,7 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
- return string.replace(' ','-').toLowerCase(); 
+ return string.replace(/\s/g,'-').toLowerCase(); 
 
 
 
@@ -82,7 +82,7 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-if (string[0].toLowerCase() === char) {
+if (string[0].toLowerCase() === char.toLowerCase()) {
     return true; 
 } else {
     return false; 
@@ -106,10 +106,12 @@ if (string[0].toLowerCase() === char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-if (string[-1].toLowerCase === char) {
-    return true; 
+let newString = string.toLowerCase(); 
+let newChar = char.toLowerCase();
+if (newString.charAt(newString.length-1) === newChar) {
+    return true
 } else {
-    return false; //not right
+    return false 
 }
 
 
@@ -123,7 +125,7 @@ if (string[-1].toLowerCase === char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+return `${stringOne}${stringTwo}`; 
 
 
     // YOUR CODE ABOVE HERE //
@@ -142,6 +144,7 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
+    return args.join('');
 
 
     // YOUR CODE ABOVE HERE //
