@@ -13,8 +13,12 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+  return function(check) {
+      return check > base;
+  }
+
+      
+  
     
     
     // YOUR CODE ABOVE HERE //
@@ -27,7 +31,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(check) {
+        return check < base; 
+    }
     
     
     
@@ -41,7 +47,9 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(char) {
+        return (char[0].toLowerCase() === startsWith.toLowerCase());  
+    }
     
     
     
@@ -55,7 +63,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(char) {
+        return (char.charAt(char.length-1).toLowerCase() === endsWith.toLowerCase()); 
+    }
     
     
     
@@ -71,9 +81,13 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    let newArray = []; 
+    for (let i = 0; i < strings.length; i++) {
+        var modified = modify(strings[i]);
+        newArray.push(modified);  
+      } 
     
-    
-    
+    return newArray;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -88,9 +102,15 @@ function modifyStrings(strings, modify) {
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
 function allStringsPass(strings, test) {
-    // YOUR CODE BELOW HERE //
-    
-    
+    // YOUR CODE BELOW HERE // 
+    let x = true; 
+    for (var i = 0; i < strings.length; i++) {
+     if (!test(strings[i])) {
+       x = false;
+   }
+}
+     return x; 
+                                                          
     
     
     // YOUR CODE ABOVE HERE //

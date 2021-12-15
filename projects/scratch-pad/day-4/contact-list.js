@@ -35,9 +35,10 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-    return {
-        
-    }
+    return { id: id,
+             nameFirst: nameFirst,
+             nameLast: nameLast
+        }; 
 
 } 
 
@@ -46,18 +47,78 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        
+        },
+        addContact: function(contact) {
+            contacts.push(contact); 
+        
+        },
+        findContact: function findContact(fullName) {
+            for (var i = 0; i < contacts.length; i++) {
+            if (fullName === contacts[i].nameFirst + " " + contacts[i].nameLast) {
+                 return contacts[i]; 
+            } 
+                
+                
+               }
+             
+            
+               
+        },
+        removeContact: function removeContact(contact) {
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i] === contact) {
+                    return contacts.splice(i, 1);  
+                }
+            }
+        
+        },
+    
+        printAllContactNames: function printAllContactNames(contact) {
+            //create 
+
+            console.log(contacts); 
+            let newString = '';
+            for (let i = 0; i < contacts.length; i++) {
+            if (i === contacts.length-1)  {
+                newString += contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+                 
+            } else {
+                newString += contacts[i].nameFirst + ' ' + contacts[i].nameLast +'\n';
+            }
+             }    
+                return newString; 
+            
+        
+        
+          
+            //iterate through contacts
+            // if i is equal to the last index
+            //??
+            // push string into output
+            // else
+            // create full variable that stores the firstname plus lastname plus\n
+             
+            // how to use the values in the array 
+            
+        
+                
         }
+    
+          
+
     }
-}
+    
 
 
 
+    }
 
 // YOUR CODE GOES ABOVE HERE //
 

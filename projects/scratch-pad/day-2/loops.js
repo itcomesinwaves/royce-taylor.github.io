@@ -12,7 +12,9 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  for (let i = 0; i <= array.length; i++) {
+   console.log(array[i]);  
+  }
   
   
   
@@ -25,9 +27,10 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+
+  for (let i = array.length-1; i > -1; i--){
+   console.log(array[i]);
+  }     
   
   // YOUR CODE ABOVE HERE //
 }
@@ -37,10 +40,12 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  let newArray = [];
+  for (var key in object) {
+    newArray.push(key); 
+}
+  return newArray;
+    
   // YOUR CODE ABOVE HERE //
 }
 
@@ -50,7 +55,9 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (var keys in object) {
+    console.log(keys); 
+  }
   
   
   
@@ -62,8 +69,11 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  let newArray = []; 
+  for (var key in object) {
+    newArray.push(object[key])
+  }
+  return newArray; 
   
   
   // YOUR CODE ABOVE HERE //
@@ -75,7 +85,9 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (var key in object) {
+    console.log(object[key]);
+  }
   
   
   
@@ -87,6 +99,11 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
+ let count = 0;
+ for (let key in object) {
+   count++;
+ }
+return count;
   
   
   
@@ -100,9 +117,16 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  let newArr = []; 
+  for (let key in object) {
+    newArr.push(object[key]); 
+  }
+    // newArr.reverse(); 
+    // console.log(newArr); 
+  for (var i = newArr.length-1; i >= 0; i--) {
+      console.log(newArr[i]);  
+  }
+    
   
   // YOUR CODE ABOVE HERE //
 }
