@@ -14,16 +14,23 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function search(animals, name) {
+    // create a vairable and assgine it to the value of null
     ans = null;
+    // iterate throught the animals array
     for (var i = 0; i < animals.length; i++){
+        // then iterate throught the objects within the animals array using animals[i]
         for (var key in animals[i]) {
+            // condition that checks if the key of the object is equal to that of the name parameter being passed in
             if (key === 'name') {
+                // condition that checks if that objects property is equal to that of the name parameter 
                if (animals[i][key] === name) {
+                   // if condition is true then ans is reassigned to the value of that animal object
                    ans = animals[i];
                }
             }
         }
     } 
+    // return the value of ans which will either be null or animals[i] which is stored somewher in the animals array 
     return ans; 
 }
 
@@ -32,10 +39,13 @@ function search(animals, name) {
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function replace(animals, name, replacement){
+    // looping through the animals array
     for (var i = 0; i < animals.length; i++) {
+        // which then loops throught the objects in animals[i]
         for (var key in animals[i]) {
+            // checks if the key at animals[i] is the same as name parameter being passed in
             if (animals[i][key] === name) {
-                // referncing the object and assignign it the replacement 
+                // referncing the object (animals[i]) and assignign it the replacement 
                 animals[i] = replacement; 
             }
         }
