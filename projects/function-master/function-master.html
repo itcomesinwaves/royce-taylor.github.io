@@ -119,7 +119,7 @@
     /* global updateObject */
     QUnit.test("updateObject() : Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it.", function(assert){
       var data = {a: "one", b: "two", "hokey": false};
-      assert.deepEqual(updateObject(data, "b", "three"), {a:"one", b:"three", hokey: false});
+      assert.deepEqual(updateObject(data, "b", "three"), {a:"one", b:"three", hokey: false}); 
       var data = {a: "one", b: "two", "hokey": false};
       assert.deepEqual(updateObject(data, "ponies", "yes"), {a:"one", b:"two", hokey: false, ponies: "yes"});
       var data = {a: "one", b: "two", "hokey": false};

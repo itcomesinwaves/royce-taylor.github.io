@@ -3,22 +3,52 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
-
+function triangles(triangleszzzz) {
+  for (let pp = '#'; pp.length <= triangleszzzz; pp += '#') {
+  console.log(pp); 
+  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function fizzBuzz() {
-  
+function fizzBuzz(start, end) {
+  // print start to end
+  // anything that's a multiple of 3 'fizz'
+  // if anythign that's a multiple of 5 'buzz'
+  // if both 'fizzbuzz'
+  for (var i = start; i <= end; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+
+    } else if (i % 3 === 0)  {
+      console.log('fizz');
+    } else if(i % 5 === 0) {
+      console.log('buzz'); 
+    } else {
+      console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
+function drawChessboard(num) {
+  let newBoard = '';
+  for (let y = 0; y < num.length; y++) {
+    for (let x = 0; x < num.length; x++) {
+      if (x + y % 2 === 0) {
+        newBoard += ' ';
+      } else { 
+        newBoard += '#'; 
+      }
+    }
+    newBoard += `\n`;  
+  
+  } 
+  console.log(newBoard); 
 
 }
 
