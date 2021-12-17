@@ -35,20 +35,51 @@ function fizzBuzz(start, end) {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard(num) {
-  let newBoard = '';
-  for (let y = 0; y < num.length; y++) {
-    for (let x = 0; x < num.length; x++) {
-      if (x + y % 2 === 0) {
-        newBoard += ' ';
-      } else { 
-        newBoard += '#'; 
-      }
-    }
-    newBoard += `\n`;  
+function drawChessboard(size) {
+ // create an empty string result 
+let result = '';
+ // loop to create the rows
+ let row = 1; 
+ while (row <= size){
+   let column = 1; 
+  // loop to create columns 
+   while (column <= size){ 
+     if ((column + row) % 2 === 0){
+       result += ' '; 
+     } else {
+       result += '#'; 
+     }
+     column += 1; 
+   }
+   // add a new line symbol to end current row
+   result += '\n';
+   row += 1; 
+ }
+
+
+console.log(result); 
+
+
+  // log result to the console 
+
+
+
+  // let newBoard = '';
+
+  // for (let y = 0; y < num.length; y++) {
+  //   for (let x = 0; x < num.length; x++) {
+  //     if (x + y % 2 === 0) {
+  //       x += ' ';
+  //       newBoard += x;
+  //     } else { 
+  //       newBoard += '#'; 
+  //     }
+  //   }
+  //   newBoard += '\n';  
   
-  } 
-  console.log(newBoard); 
+  // } 
+  // console.log(newBoard);
+  // return newBoard;  
 
 }
 
