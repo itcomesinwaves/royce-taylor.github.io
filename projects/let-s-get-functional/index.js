@@ -4,6 +4,7 @@
 
 var customers = require('./data/customers.json');
 var _ = require('underbar');
+const object = require('underbar/object');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -159,13 +160,62 @@ let returnArray = [];
 }
 
 var topThreeTags = function(array) {
-  
-
+ let outputArray = [];
+  let totalObj = {};
+ let greatestNum = 0;
+ _.each(array, function(current, index, array) {
+    _.each(current.tags, function(tag, index, array) {
+      if (totalObj[tag]) {
+          totalObj[tag]++; 
+        if (greatestNum < totalObj[tag]) {
+          greatestNum = totalObj[tag];
+        }
+      } else {
+        totalObj[tag] = 1;
+        if (greatestNum < totalObj[tag]) {
+          greatestNum = totalObj[tag]; 
+        }
+      }
+    });
+    //console.log(greatestNum); 
+  //console.log(totalObj);
+  });
+  totalObj = Object.entries(totalObj);
+  _.each(totalObj, function(tag, num, array) {
+    if (tag[1] === greatestNum) {
+      outputArray.push(tag[0]);
+    }
+  });
+  return outputArray;
 }
 
-var genderCount = function () {
+
+
+var genderCount = function(array) {
+let genders = {};
+_.each(array, function(customer, index, array) {
+  if (genders[customer.gender]) {
+      genders[customer.gender]++;  
+  } else { 
+      genders[customer.gender] = 1; 
+
+    }
+});
+return genders; 
 
 }
+  //   let totalObj = {};
+//   _.each(array, function(current, index, array) {
+//     _.each(current.gender, function(gen, index, array){
+//         if(totalObj[gen]) {
+//           totalObj[gen]++;
+//         } else {
+//           totalObj[gen] = 1; 
+//         }
+//     });
+//   });
+// return totalObj;
+//}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
