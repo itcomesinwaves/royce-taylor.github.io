@@ -126,17 +126,22 @@ return newArr;
 ////////////////////////////////////////////////////////////////////////////////
 
 function prepend(list, element) {
-for (var key in list) {
-  list.element; 
-}
-return list;
-}
+  let newList =  {
+    value: list,
+     rest: element
+  };
+  return newList;
+};
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function nth(list, n) {
+  if (n < 0) {
+    return undefined;
+  }
   if (n === 0) {
     return list.value; 
   }
@@ -149,9 +154,30 @@ function nth(list, n) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+  if (x === y) {
+    return true;
+   }
+    if (x == null || typeof x !== 'object' 
+    || y == null  || typeof y !== 'object' ) {
+      return false; 
+    } 
+     let thingsInX = 0;
+     let thingsInY = 0;
+     for (var key in x) {
+       thingsInX++;
+     }
+     for (var key in y) {
+       thingsInY++;
+     } if (!(key in x) || !deepEqual(x[key] ,y[key])) {
+       return false; 
+     }
+     return thingsInX == thingsInY; 
+    }
 
-}
+    
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

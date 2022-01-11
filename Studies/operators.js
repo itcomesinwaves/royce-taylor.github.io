@@ -29,7 +29,7 @@
  *  other is true or false then continue with the following code execution 
  * 
  * 5. Unary Operators: These are operators that are used to compare one type of operand to itself (single value). These type of operators include, unary plus +, unary minus -, increment ++, decrement --, 
- *  logical  NOT !, Bitwise NOT ~, typeof, delete, and void 
+ *  logical  NOT !, Bitwise NOT ~, typeof, and delete
  *  These are often used when you need to increase, decrease or resolve a single value in any way.
  * 
  * 6. Ternary Operators: These are operators that operate on three operands in javascript. The first part is a condition followed by a question mark ? and then is followed by a code that runs if the condition resolves to truthey,
@@ -57,28 +57,119 @@ console.log(x); // prints => 9
 
 // Examples of Arithmatic operators //
 let xxxx = 5; 
+/// addition
 function add(x, y) {
     return x + y; // takes the value of x parameter and ADDs it to the value of the y parameter 
 
 }
 console.log(add(xxxx, 7)); // prints => 12
-
+/// subtraction
 function subtract(x, y) {
     return x - y;// takes the value of x parameter and subtracts the value of the y parameter from it 
 }
 console.log(subtract(xxxx, 3)); // prints => 2
-
+/// multiplication
 function multiply(x, y) {
     return x * y; // takes the value of x parameter and multiplies the value of the y parameter to it 
 }
-console.log(subtract(xxxx, 2));// prints => 10
-
+console.log(multiply(xxxx, 2));// prints => 10
+/// division
 function divide(x, y) {
     return x / y; 
 }
 console.log(divide(xxxx, 10)); // prints => 2 
-
+/// remainder(or modula)
 function percentile(x, y) {
     return x % y; 
 }
-console.log(xxxx, 25); 
+console.log(xxxx, 25); // prints => 5
+
+
+
+// Examples of Comparison Operators //
+let variable = 20;
+// less than
+console.log(variable < 30); // prints => true
+
+// less that or equal to
+console.log(variable <= 20); // prints => true
+
+// greater than 
+console.log(variable > 30); // prints => false
+
+// greater than or equal to 
+console.log(variable >= 30); // prints => false
+
+// strictly equal to 
+console.log(variable === 20) // prints => true
+console.log(variable === '20') // prints => false
+
+// loosley equal to 
+console.log(variable == '20') // prints => true
+
+
+// Examples of Logical Operators //
+let x = 5; 
+let y = 8;
+// logical || (OR) operator
+if (x < y || y < 10) {
+    console.log('This is true'); // prints => This is true
+}
+// logical && (AND) operator
+if (x < y && y > 20) {
+    console.log('Both cases are not true so this never prints to the console')
+} else {
+    console.log('This line gets executed instead') // prints => This line gets executed instead 
+}
+// logical ! (NOT) operator (or Bang operator)
+if (x !== y) {
+    console.log(true); // prints => true
+}
+if (!x) {
+    console.log('nope') 
+} else {
+    console.log('yup') // prints => yup 
+}
+
+
+// Examples of Unary Operators //
+let x = 1;
+// Unary plus  
+x = 1 + 'thing'; 
+console.log(x) // prints => NaN (trying to resolve assignment of a number to a string isn't a number)
+// Unary minus 
+x = 1 - 'thing'; 
+console.log(x); // prints => NaN (trying to resolve assignment of a number to a string isn't a number)
+// Increment 
+x = 1++ 
+console.log(x); // prints => 2 (same as saying x = 1 + 1)
+// Decrement 
+x = 5--
+console.log(x); // prints => 4 (same as saying x = 5 - 1)
+// ! Not
+x = !5; 
+console.log(x); // prints => true
+// ~ Not 
+x = ~5; 
+console.log(x); // prints => true
+// typeof operator 
+console.log(typeof x); // prints => number
+// delete operator 
+const object = {
+    firstname: 'Royce',
+    lastname: 'Taylor'
+  };
+console.log(object.firstname); // prints => Royce
+delete object.firstname; 
+
+console.log(object.firstname); // prints => undefined
+// void operator 
+let totally = function (x, y) {
+    console.log('pointless function');
+}
+
+console.log(totally); // prints => pointless function 
+
+// Examples of Ternary Operators 
+(x > 1) ? console.log('this case') : console.log('this instead'); // prints => this case 
+// 

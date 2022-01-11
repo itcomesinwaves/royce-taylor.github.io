@@ -128,7 +128,7 @@ console.log(!result); // using the bang operator to negate the outcome of result
 var bool = (1 === 1); // this expression uses logical operators to resolve to a boolean value
 console.log(bool); // prints => true 
 
-// Examples of Arrays
+// Examples of Arraysr
 let myArray = []; // arrays can be assigned with nothing in them 
 let myArray = ['hey', 'this', 'is', 'totally', 'an', 'array']; // basic array
 let newArray = ['hey', 'this', ['nested', 68, false], 'woah']; // this showcases a nested array within an array
@@ -206,7 +206,7 @@ function bones(x, y) {
 var what = null;
 console.log(null) // prints => null 
 
-const nully = function (c + t) {
+const nully = function (c, t) {
     if (c === t) {
         return null;
     } else {

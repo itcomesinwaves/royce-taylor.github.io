@@ -34,10 +34,14 @@ return isEven(n + 1);
 ////////////////////////////////////////////////////////////////////////////////
 
 function countChars(str, n) {
-let count = 0;
-  for (var i = 0; i < str.legnth; i++) {
-    if (str[i] === n || n === '') {
-      count++;
+  if (!str) {
+    return 0;  
+  }
+  let count = 0;
+  for (var i = 0; i < str.length; i++) {
+   console.log('Hit this for loop')
+    if (str[i] === n) {
+      count += 1;
   }
 }
   return count;
