@@ -89,8 +89,17 @@
  *  -NaN is  a simple data type 
  *
  * 10: INFINITY and -INFINITY:
- *  -Infinity is a data type 
- *  -Infinity and beyond boiii
+ *  -Infinity is a data type that is held as an object in the global scope, it holds a value higher than any positive number 
+ *  - -Infinity (negative) is also a data type held as and object in the global scope and holds a value higher than any negative number 
+ * - Infinity is usually used as a comparison for a boolean context
+ * 
+ * 11: PRIMITIVE AND NON PRIMITIVE:
+ * -The main differecne between these data type are that primitave datatypes are all of the simple data types, and the non-primitave datatypes are all of the complex datatypes. Primitave datatypes are immutable, meaning they do not change and are just copied into new values
+ * Non primative data types are mutable meaning the values contained within them can be changed and manipulated or updated. Therefore primative data types are copy by value, and non-primative datatypes are copy by reference. 
+ * 
+ * 12: COPY BY VALUE/COPY BY REFERENCE: 
+ * -Copy by value refers to simple or primative data types, in that their values will be copied and then changed into newer values.
+ * -Copy by reference refers to complex data types, in that the object, function, or arrays, values will be referenced and then can directly be manipulated and changed into different values.  
 */
 
 
@@ -228,3 +237,15 @@ var x = 200;
 console.log(x + z); // prints => NaN
 
 // Examples of Infinity 
+const maxNumber = Math.pow(10, 1000); // using Math.pow will obtain the max positive number
+
+if (maxNumber === Infinity) { // condition that checks if the maxNumber is strictly equal to the Infinity datatype 
+  console.log('Totally Infinity!'); // prints => Totally Infinity! 
+}
+
+
+
+
+
+
+

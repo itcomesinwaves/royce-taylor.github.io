@@ -155,25 +155,67 @@ function nth(list, n) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function deepEqual(x, y) {
-  if (x === y) {
-    return true;
-   }
-    if (x == null || typeof x !== 'object' 
-    || y == null  || typeof y !== 'object' ) {
-      return false; 
-    } 
-     let thingsInX = 0;
-     let thingsInY = 0;
-     for (var key in x) {
-       thingsInX++;
-     }
-     for (var key in y) {
-       thingsInY++;
-     } if (!(key in x) || !deepEqual(x[key] ,y[key])) {
-       return false; 
-     }
-     return thingsInX == thingsInY; 
-    }
+// if both x and y are not 'objects'
+  // compare them directly 
+  if (typeof x !== 'object' && typeof y !== 'object') {
+    // compare them directly 
+    return x === y;
+  }
+  // determine if either x or y is not an object 
+if (typeof x !== 'object' || typeof y !== 'object') {
+
+}
+// now we're only dealing with complex pieces of data 
+ 
+ // create array of the x values keys 
+ let xKeys = Object.keys(x); // ['a']
+ // create array of the y values keys
+ let yKeys = Object.keys(y);  // ['a']
+
+// if the length of xkeys in NOT equal to the lenght of ykeys
+if (xKeys.length !== yKeys.length) {
+  return false; 
+}
+
+
+// the keys arrays are EQUAL
+// ['a', 'b'] // ['c', 'd']
+for (let i = 0; i < xKeys.length; i++) {
+  // determine if the current key in xKeys is NOT included in the yKeys array OR the result of calling deepequal on the values as these keys returns false 
+  if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[yKeys[i]]))  {
+
+    return false; 
+  }
+}
+
+
+// otherwise if we iterated through every aspect of the iteration
+
+return true; 
+
+
+}
+
+
+  // if (x === y) {
+  //   return true;
+  //  }
+  //   if (x == null || typeof x !== 'object' 
+  //   || y == null  || typeof y !== 'object' ) {
+  //     return false; 
+  //   } 
+  //    let thingsInX = 0;
+  //    let thingsInY = 0;
+  //    for (var key in x) {
+  //      thingsInX++;
+  //    }
+  //    for (var key in y) {
+  //      thingsInY++;
+  //    } if (!(key in x) || !deepEqual(x[key] ,y[key])) {
+  //      return false; 
+  //    }
+  //    return true; 
+  //   }
 
     
 
