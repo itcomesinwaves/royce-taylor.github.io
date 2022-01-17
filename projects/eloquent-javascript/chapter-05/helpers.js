@@ -3,7 +3,7 @@ function repeat(n, action) {
     action(i);
   }
 }
-
+// the letter that we pass in must be it's unicode 
 function characterScript(code) {
   for (let script of SCRIPTS) {
     if (script.ranges.some(([from, to]) => {
