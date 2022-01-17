@@ -3,9 +3,10 @@
  * 
  * 0: Control flow is the way we structure conditional statements in javascript. Conditional statments are a way that we can make decisions 
  * by writing code in the a sort of question that will resolve to true or false. Based on the boolean condition diferent blocks of code will 
- * then execute. The most utitlized control flow conditional statement is the 'if' 'else-if' 'else' chain, and withing each if statement is a 
- * condition that will resolve to either truthy or falsey therefore they are evaluated in a boolean context. There are also switch break statemnets
- * as well. Switch break statements are useful for larger sets of conditions that one may have to write but are evaluated to a boolean context in the same
+ * then execute. The most utitlized control flow conditional statement is the 'if' 'else-if' 'else' chain, and within each if statement is a 
+ * condition that will resolve to either truthy or falsey therefore they are evaluated in a boolean context. If statements will always return true, if their condition is true
+ * so if you have an if statement after the initial one in it's code block, then they will both return true, therefore making a series of if statments NOT a conditional chain, since they all will return true. 
+ * There are also switch break statemnets as well. Switch break statements are useful for larger sets of conditions that one may have to write but are evaluated to a boolean context in the same
  * way if else chains are. 
  * 
  * 1: if: The 'if' keyword is how we initialize the conditional chain and will have the first condition directly after it wrapped in parenthesis. If this condition
